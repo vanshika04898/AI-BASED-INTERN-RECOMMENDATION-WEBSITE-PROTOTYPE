@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Mentor - Internship Buddy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Internship Buddy</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="internships.html">Internships</a>
+    <a href="applications.html">Applications</a>
+    <a href="bookmarks.html">Bookmarks</a>
+    <a href="career.html">Career Path</a>
+    <a href="chat.html" class="active">Chat Mentor</a>
+    <a href="#" onclick="logout()">Logout</a>
+  </div>
+
+  <!-- Main content -->
+  <div class="main-content">
+    <h1>Chat Mentor</h1>
+    <p>Ask questions like "help", "career", or "internship".</p>
+
+    <!-- Language Selector -->
+    <div class="language-selector">
+      <label for="chat-language">Choose Language:</label>
+      <select id="chat-language" onchange="changeLanguage()">
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+        <option value="ta">Tamil</option>
+      </select>
+    </div>
+
+    <!-- Chat window -->
+    <div id="chat-window" class="chat-window">
+      <div id="chat-header">
+        <span>Internship Buddy</span>
+        <button onclick="toggleChat()">X</button>
+      </div>
+      <div id="chat-messages"></div>
+      <form onsubmit="sendMessage(event)">
+        <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off">
+      </form>
+    </div>
+
+    <!-- Floating Chat Button -->
+    <button id="chatbot-button" onclick="toggleChat()">💬 Chat</button>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Open chat automatically
+    toggleChat();
+  </script>
+</body>
+</html>

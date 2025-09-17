@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internships - Internship Buddy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Internship Buddy</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="internships.html" class="active">Internships</a>
+    <a href="applications.html">Applications</a>
+    <a href="bookmarks.html">Bookmarks</a>
+    <a href="career.html">Career Path</a>
+    <a href="chat.html">Chat Mentor</a>
+    <a href="#" onclick="logout()">Logout</a>
+  </div>
+
+  <div class="main-content">
+    <h1>Find Internships</h1>
+    <div class="search-box">
+      <input type="text" id="internship-search" placeholder="Search by title, skills, or sector">
+      <button onclick="searchInternships()">Search</button>
+    </div>
+
+    <div id="internship-list">
+      <!-- Default sample internships will appear -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    function loadDefaultInternships(){
+      const internships = JSON.parse(localStorage.getItem('internships'));
+      const listDiv = document.getElementById('internship-list');
+      listDiv.innerHTML = "";
+
+      internships.forEach(i=>{
+        const div = document.createElement('div');
+        div.className = "internship-card";
+        div.innerHTML = `
+          <h3>${i.title}</h3>
+          <p>${i.skills} | ${i.duration} | ${i.location}</p>
+          <button onclick="applyInternship(${i.id})">Apply</button>
+          <button onclick="bookmarkInternship(${i.id})">Bookmark</button>
+        `;
+        listDiv.appendChild(div);
+      });
+    }
+
+    loadDefaultInternships();
+  </script>
+</body>
+</html>

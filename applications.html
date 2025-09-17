@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Applications - Internship Buddy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Internship Buddy</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="internships.html">Internships</a>
+    <a href="applications.html" class="active">Applications</a>
+    <a href="bookmarks.html">Bookmarks</a>
+    <a href="career.html">Career Path</a>
+    <a href="chat.html">Chat Mentor</a>
+    <a href="#" onclick="logout()">Logout</a>
+  </div>
+
+  <div class="main-content">
+    <h1>My Applications</h1>
+    <div id="applications-list">
+      <!-- Applied internships will appear here -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    function loadApplications(){
+      const user = JSON.parse(localStorage.getItem('currentUser'));
+      const listDiv = document.getElementById('applications-list');
+      listDiv.innerHTML = "";
+
+      if(user.applied.length === 0){
+        listDiv.innerHTML = "<p>You have not applied to any internships yet.</p>";
+        return;
+      }
+
+      const internships = JSON.parse(localStorage.getItem('internships'));
+      user.applied.forEach(id=>{
+        const internship = internships.find(i=>i.id===id);
+        if(internship){
+          const div = document.createElement('div');
+          div.className = "application-card";
+          div.innerHTML = `
+            <h3>${internship.title}</h3>
+            <p>${internship.skills} | ${internship.duration} | ${internship.location}</p>
+          `;
+          listDiv.appendChild(div);
+        }
+      });
+    }
+
+    loadApplications();
+  </script>
+</body>
+</html>

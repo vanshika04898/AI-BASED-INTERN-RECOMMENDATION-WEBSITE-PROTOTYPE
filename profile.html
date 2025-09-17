@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - Internship Buddy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Internship Buddy</h2>
+    <a href="dashboard.html" class="active">Dashboard</a>
+    <a href="internships.html">Internships</a>
+    <a href="applications.html">Applications</a>
+    <a href="bookmarks.html">Bookmarks</a>
+    <a href="career.html">Career Path</a>
+    <a href="chat.html">Chat Mentor</a>
+    <a href="#" onclick="logout()">Logout</a>
+  </div>
+
+  <div class="main-content">
+    <h1>Profile</h1>
+    <div class="profile-container">
+      <label>Name</label>
+      <input type="text" id="profile-username">
+
+      <label>Email</label>
+      <input type="email" id="profile-email">
+
+      <label>Skills</label>
+      <input type="text" id="profile-skills">
+
+      <label>Age</label>
+      <input type="number" id="profile-age">
+
+      <label>Gender</label>
+      <select id="profile-gender">
+        <option value="">Select</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <p>Resume: <span id="profile-resume-status">Not Uploaded</span></p>
+      <input type="file" id="resume-upload" onchange="uploadResume()">
+
+      <button onclick="saveProfile()">Save Profile</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>loadProfile();</script>
+</body>
+</html>

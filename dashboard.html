@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Internship Buddy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Internship Buddy</h2>
+    <a href="dashboard.html" class="active">🏠 Dashboard</a>
+    <a href="internships.html">💼 Internships</a>
+    <a href="applications.html">📑 Applications</a>
+    <a href="bookmarks.html">🔖 Bookmarked</a>
+    <a href="career.html">📚 Career Path</a>
+    <a href="profile.html">👤 Profile</a>
+  </div>
+
+  <div class="main-content">
+    <div class="dashboard-hero">
+      <h1>Welcome, <span id="user-name">User</span>!</h1>
+      <p>Check out your top internships and career suggestions.</p>
+    </div>
+
+    <div class="dashboard-cards">
+      <div class="card applied">
+        <h3>Applied</h3>
+        <p id="applied-count">0</p>
+      </div>
+      <div class="card bookmarked">
+        <h3>Bookmarks</h3>
+        <p id="bookmarks-count">0</p>
+      </div>
+      <div class="card resume">
+        <h3>Resume Uploaded</h3>
+        <p id="resume-status">No</p>
+      </div>
+      <div class="card career">
+        <h3>Career Suggestions</h3>
+        <p>3</p>
+      </div>
+    </div>
+
+    <div class="recent-section">
+      <h2>Recently Applied</h2>
+      <div id="recent-applied" class="recent-list"></div>
+
+      <h2>Bookmarked Internships</h2>
+      <div id="recent-bookmarks" class="recent-list"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

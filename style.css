@@ -1,0 +1,410 @@
+/* ===========================
+   GENERAL BODY & FONTS
+=========================== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f7f7f7;
+  color: #333;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: #2e7d32;
+  margin: 10px 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===========================
+   LOGIN & REGISTER PAGE
+=========================== */
+body.login-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff9800, #ffffff, #4caf50); /* Indian tricolor gradient */
+}
+
+.login-container {
+  background: white;
+  padding: 40px 35px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width: 350px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.login-container h1 {
+  color: #2e7d32;
+  margin-bottom: 8px;
+  font-size: 26px;
+}
+
+.login-container p {
+  color: #555;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.login-container input {
+  display: block;
+  width: 92%;
+  margin: 12px auto;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+.login-container input:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+  outline: none;
+}
+
+.login-container button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: background 0.3s;
+  width: 100%;
+}
+
+.login-container button:hover {
+  background: #388e3c;
+}
+
+.links {
+  margin-top: 18px;
+  font-size: 13px;
+}
+
+.links a {
+  color: #2e7d32;
+  text-decoration: none;
+  margin: 0 5px;
+  cursor: pointer;
+  font-weight: 500;
+}
+        
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 220px;
+  height: 100%;
+  background: #4caf50; /* green */
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 22px;
+  color: #fff3e0; /* soft orange */
+}
+
+.sidebar a {
+  padding: 12px 15px;
+  margin: 5px 0;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background: #fff3e0;
+  color: #2e7d32;
+}
+
+/* ===========================
+   MAIN CONTENT
+=========================== */
+.main-content {
+  margin-left: 240px;
+  padding: 30px;
+}
+
+/* ===========================
+   DASHBOARD HERO
+=========================== */
+.dashboard-hero {
+  background: linear-gradient(135deg, #ff9800, #ffffff, #4caf50);
+  padding: 20px;
+  border-radius: 12px;
+  color: #2e7d32;
+  margin-bottom: 20px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* ===========================
+   DASHBOARD CARDS
+=========================== */
+.dashboard-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: #fff;
+  flex: 1 1 200px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.card p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff9800; /* Orange highlight */
+}
+
+/* ===========================
+   INTERNSHIP & APPLICATION CARDS
+=========================== */
+.internship-card, .application-card, .career-card {
+  background: #fff;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.internship-card:hover, .application-card:hover, .career-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.internship-card h3, .application-card h3, .career-card h3 {
+  margin-bottom: 5px;
+  color: #ff5722; /* orange titles */
+}
+
+.internship-card p, .application-card p, .career-card p {
+  font-size: 14px;
+  margin: 3px 0;
+}
+
+.internship-card button, .application-card button {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-right: 5px;
+}
+
+.internship-card button.apply { background:#4caf50; color:white;}
+.internship-card button.bookmark { background:#ff9800; color:white;}
+.application-card button { background:#f44336; color:white;}
+
+/* ===========================
+   SEARCH BOX
+=========================== */
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  flex: 1;
+}
+
+.search-box button {
+  padding: 10px 15px;
+  border:none;
+  border-radius: 8px;
+  background: #ff9800;
+  color:white;
+  font-weight: bold;
+  cursor:pointer;
+}
+
+.search-box button:hover {
+  background:#fb8c00;
+}
+
+/* ===========================
+   PROFILE FORM
+=========================== */
+.profile-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  max-width: 600px;
+}
+
+.profile-container label {
+  display:block;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.profile-container input, 
+.profile-container select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border:1px solid #ccc;
+  margin-top:5px;
+}
+
+.profile-container button {
+  margin-top:15px;
+  background:#4caf50;
+  color:white;
+  padding:10px 15px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.profile-container button:hover {
+  background:#388e3c;
+}
+
+/* ===========================
+   CHATBOT
+=========================== */
+#chatbot-button {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #ff9800;
+  color:white;
+  padding:15px;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:18px;
+  box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+
+#chat-window {
+  position: fixed;
+  bottom: 90px;
+  right: 25px;
+  width: 300px;
+  max-height: 400px;
+  background:white;
+  border-radius:12px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.2);
+  display:none;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#chat-window.open { display:flex; }
+
+#chat-header {
+  background:#4caf50;
+  color:white;
+  padding:10px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+#chat-messages {
+  flex:1;
+  padding:10px;
+  overflow-y:auto;
+  background:#f7f7f7;
+}
+
+#chat-messages .chat-user {
+  text-align:right;
+  background:#ff9800;
+  color:white;
+  padding:6px 10px;
+  border-radius:8px;
+  margin:5px 0;
+  max-width:80%;
+  margin-left:auto;
+}
+
+#chat-messages .chat-bot {
+  text-align:left;
+  background:#4caf50;
+  color:white;
+  padding:6px 10px;
+  border-radius:8px;
+  margin:5px 0;
+  max-width:80%;
+  margin-right:auto;
+}
+
+#chat-input {
+  padding:10px;
+  border:none;
+  border-top:1px solid #ccc;
+  width:100%;
+  box-sizing:border-box;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media(max-width: 768px){
+  .sidebar{width:60px; padding:10px;}
+  .sidebar h2{display:none;}
+  .sidebar a{font-size:12px; padding:8px;}
+  .main-content{margin-left:80px; padding:15px;}
+  .dashboard-cards{flex-direction:column;}
+  .search-box{flex-direction:column;}
+}
+
+/* ===========================
+   ANIMATION
+=========================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
